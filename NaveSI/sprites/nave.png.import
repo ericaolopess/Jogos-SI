@@ -1,0 +1,13 @@
+[remap]
+
+importer="image"
+type="Image"
+path="res://.import/nave.png-bcf03e4e7cd3228230f8ba79f92a0355.image"
+
+[deps]
+
+source_file="res://sprites/nave.png"
+dest_files=[ "res://.import/nave.png-bcf03e4e7cd3228230f8ba79f92a0355.image" ]
+
+[params]
+
