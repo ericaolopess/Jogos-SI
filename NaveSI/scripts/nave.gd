@@ -6,10 +6,7 @@ func _ready():
 	linear_velocity = Vector2(0,0)
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-
-	
+func _process(delta):	
 	if Input.is_action_pressed("ui_right"):
 		linear_velocity = Vector2(MOVE_SPEED,0)
 		
