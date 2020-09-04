@@ -1,13 +1,19 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://bg/blue.png" type="Texture" id=1]
 [ext_resource path="res://scenes/nave.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scripts/spawn_inimigo.gd" type="Script" id=3]
+[ext_resource path="res://sounds/Trilha.wav" type="AudioStream" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 21.8884, 344.808 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 21.8884, 359.157 )
 
 [node name="fase1" type="Node2D"]
 __meta__ = {
-"_edit_horizontal_guides_": [ -200.012 ],
-"_edit_vertical_guides_": [ 204.885 ]
+"_edit_horizontal_guides_": [ -200.012 ]
 }
 
 [node name="bg" type="Sprite" parent="."]
@@ -26,4 +32,17 @@ script = ExtResource( 3 )
 [node name="Timer" type="Timer" parent="spawn_inimigo"]
 wait_time = 1.5
 autostart = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( -23.9166, 325.265 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 382.665, 327.657 )
+shape = SubResource( 2 )
 [connection signal="timeout" from="spawn_inimigo/Timer" to="spawn_inimigo" method="_on_Timer_timeout"]

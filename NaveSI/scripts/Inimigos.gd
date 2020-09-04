@@ -10,4 +10,13 @@ func _process(delta):
 	pos_y -= speed * delta
 	position.y = pos_y
 	
+func Dano():
+	queue_free()
+	
+	
+	
+	
+	
+	
+	
 	

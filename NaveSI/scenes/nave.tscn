@@ -4,7 +4,7 @@
 [ext_resource path="res://sprites/itens (1).png" type="Texture" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 32.8631
+radius = 33.666
 
 [node name="nave" type="RigidBody2D"]
 scale = Vector2( 0.5, 0.5 )
@@ -15,5 +15,6 @@ scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -2.15092, 5.01881 )
 rotation = -0.327115
 shape = SubResource( 1 )
