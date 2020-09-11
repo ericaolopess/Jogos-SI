@@ -1,15 +1,41 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://bg/blue.png" type="Texture" id=1]
 [ext_resource path="res://scenes/nave.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scripts/spawn_inimigo.gd" type="Script" id=3]
 [ext_resource path="res://sounds/Trilha.wav" type="AudioStream" id=4]
+[ext_resource path="res://sounds/nokiafc22.ttf" type="DynamicFontData" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 21.8884, 354.374 )
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 21.8884, 359.157 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 40
+font_data = ExtResource( 5 )
+
+[sub_resource type="Animation" id=4]
+resource_name = "gameover"
+length = 3.5
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Label:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ "G", "GA", "GAM", "GAME", "GAME
+O", "GAME
+OV", "GAME
+OVE", "GAME
+OVER" ]
+}
 
 [node name="fase1" type="Node2D"]
 __meta__ = {
@@ -45,4 +71,21 @@ shape = SubResource( 1 )
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2( 382.665, 327.657 )
 shape = SubResource( 2 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+margin_left = 45.4415
+margin_top = 126.758
+margin_right = 312.442
+margin_bottom = 207.758
+custom_fonts/font = SubResource( 3 )
+text = "GA"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer"]
+anims/gameover = SubResource( 4 )
 [connection signal="timeout" from="spawn_inimigo/Timer" to="spawn_inimigo" method="_on_Timer_timeout"]
