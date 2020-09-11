@@ -6,7 +6,7 @@
 [ext_resource path="res://sounds/Trilha.wav" type="AudioStream" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 21.8884, 344.808 )
+extents = Vector2( 21.8884, 354.374 )
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 21.8884, 359.157 )
@@ -39,7 +39,7 @@ stream = ExtResource( 4 )
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2( -23.9166, 325.265 )
+position = Vector2( -19.1333, 306.132 )
 shape = SubResource( 1 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]

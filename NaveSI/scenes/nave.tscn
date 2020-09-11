@@ -3,8 +3,8 @@
 [ext_resource path="res://scripts/nave.gd" type="Script" id=1]
 [ext_resource path="res://sprites/itens (1).png" type="Texture" id=2]
 
-[sub_resource type="CircleShape2D" id=1]
-radius = 33.666
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 34.487, 29.8962 )
 
 [node name="nave" type="RigidBody2D"]
 scale = Vector2( 0.5, 0.5 )
@@ -15,6 +15,9 @@ scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -2.15092, 5.01881 )
-rotation = -0.327115
+position = Vector2( 0, 6.45274 )
+rotation = 0.00187571
 shape = SubResource( 1 )
+
+[node name="Position2D" type="Position2D" parent="."]
+position = Vector2( 0.048584, -35.904 )

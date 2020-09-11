@@ -1,8 +1,8 @@
 extends Node2D
 
 onready var inimigo = preload("res://scenes/Inimigos.tscn")
-var start_position_x = -200
-var start_position_y = 200
+var start_position_x = -300
+var start_position_y = 300
 
 func _ready():
 	randomize()

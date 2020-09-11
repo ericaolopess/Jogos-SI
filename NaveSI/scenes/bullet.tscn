@@ -4,26 +4,26 @@
 [ext_resource path="res://sprites/tiro.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 11.5897, 13.7585 )
+extents = Vector2( 2.85738, 3.42232 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 6.89069, 8.62509 )
+extents = Vector2( 2.27617, 3 )
 
 [node name="bullet" type="RigidBody2D"]
 script = ExtResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 1.02669, -0.513344 )
+scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 2 )
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2( 78.5414, 33.3672 )
 
 [node name="AtacarInimigo" type="CollisionShape2D" parent="Area2D"]
-position = Vector2( -77.0013, -32.8539 )
+position = Vector2( -77.4432, -33.8262 )
 shape = SubResource( 1 )
 
-[node name="CollisionArea" type="CollisionShape2D" parent="."]
-position = Vector2( -0.513336, 0.513344 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 1.125, -0.5 )
 shape = SubResource( 2 )
-[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
