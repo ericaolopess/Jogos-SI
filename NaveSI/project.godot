@@ -16,8 +16,12 @@ _global_script_class_icons={
 [application]
 
 config/name="NaveSI"
-run/main_scene="res://scenes/fase1.tscn"
+run/main_scene="res://scenes/menu.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+SaveScore="*res://save_score.gd"
 
 [display]
 

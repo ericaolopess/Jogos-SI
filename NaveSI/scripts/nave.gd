@@ -1,11 +1,14 @@
 extends RigidBody2D
 
 onready var bullet = preload("res://scenes/bullet.tscn")
+var game
 
 const MOVE_SPEED = 200
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	linear_velocity = Vector2(0,0)
+	game = get_tree().current_scene
+	
 
 
 func _process(delta):	
@@ -27,13 +30,19 @@ func spaw_bullet():
 	
 	clone_bullet.linear_velocity = Vector2(0,-800)
 	
-	
-	
 
-	
+func _on_ataque_body_entered(body):
+	if body.is_in_group("Inimigos"):
+		$sprite.animation = "dead"
+		$Timer.autostart = true
+		$CollisionShape2D.disabled = false
+		$ataque/CollisionShape2D.disabled = false
+		game.dano()
+		
+		
 
 
-
-
-
-
+func _on_Timer_timeout():
+	$ataque/CollisionShape2D.disabled = false
+	$CollisionShape2D.disabled = false
+	$Timer.autostart = false
