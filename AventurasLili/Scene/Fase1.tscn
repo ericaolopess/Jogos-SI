@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=2]
+[gd_scene load_steps=39 format=2]
 
 [ext_resource path="res://Cenario/BG/fundo-fotografico-tecido-floresta-mundo-da-fantasia-50x30m-D_NQ_NP_621780-MLB28909771649_122018-F.jpg" type="Texture" id=1]
 [ext_resource path="res://Cenario/Tiles/Tile (9).png" type="Texture" id=2]
@@ -22,9 +22,10 @@
 [ext_resource path="res://Scene/Fase1.gd" type="Script" id=20]
 [ext_resource path="res://Cenario/Object/Bush (1).png" type="Texture" id=21]
 [ext_resource path="res://Scene/Player.tscn" type="PackedScene" id=22]
-[ext_resource path="res://Scene/PLataformaV.tscn" type="PackedScene" id=23]
+[ext_resource path="res://Scene/Zumbi-Female.tscn" type="PackedScene" id=23]
 [ext_resource path="res://Cenario/Object/Mushroom_1.png" type="Texture" id=24]
 [ext_resource path="res://font/Marsha DEMO.otf" type="DynamicFontData" id=25]
+[ext_resource path="res://Scene/Zumbi-Male.tscn" type="PackedScene" id=26]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 129, 129, 0, 127, 0, 0, 129, 0 )
@@ -41,22 +42,22 @@ points = PoolVector2Array( 128, 128, 0, 128, 0, 0, 128, 0 )
 [sub_resource type="ConvexPolygonShape2D" id=5]
 points = PoolVector2Array( 128, 128, 0, 128, 0, 0, 128, 0 )
 
-[sub_resource type="ConvexPolygonShape2D" id=13]
+[sub_resource type="ConvexPolygonShape2D" id=6]
 points = PoolVector2Array( 128, 128, 0, 128, 0, 0, 128, 0 )
 
-[sub_resource type="ConvexPolygonShape2D" id=6]
-points = PoolVector2Array( 128, 0, 32, 0, 32, 0, 128, 0 )
-
 [sub_resource type="ConvexPolygonShape2D" id=7]
-points = PoolVector2Array( 128, 32, 0, 32, 0, 0, 128, 0 )
+points = PoolVector2Array( 128, 0, 32, 0, 32, 0, 128, 0 )
 
 [sub_resource type="ConvexPolygonShape2D" id=8]
 points = PoolVector2Array( 128, 32, 0, 32, 0, 0, 128, 0 )
 
 [sub_resource type="ConvexPolygonShape2D" id=9]
+points = PoolVector2Array( 128, 32, 0, 32, 0, 0, 128, 0 )
+
+[sub_resource type="ConvexPolygonShape2D" id=10]
 points = PoolVector2Array( 128, 128, 0, 128, 0, 0, 128, 0 )
 
-[sub_resource type="TileSet" id=10]
+[sub_resource type="TileSet" id=11]
 0/name = "Tile (1).png 0"
 0/texture = ExtResource( 10 )
 0/tex_offset = Vector2( 0, 0 )
@@ -109,20 +110,20 @@ points = PoolVector2Array( 128, 128, 0, 128, 0, 0, 128, 0 )
 2/navigation_offset = Vector2( 0, 0 )
 2/shape_offset = Vector2( 0, 0 )
 2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-2/shape = SubResource( 6 )
+2/shape = SubResource( 7 )
 2/shape_one_way = false
 2/shape_one_way_margin = 1.0
 2/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 6 ),
+"shape": SubResource( 7 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 }, {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 7 ),
+"shape": SubResource( 8 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 2/z_index = 0
@@ -136,14 +137,14 @@ points = PoolVector2Array( 128, 128, 0, 128, 0, 0, 128, 0 )
 3/navigation_offset = Vector2( 0, 0 )
 3/shape_offset = Vector2( 0, 0 )
 3/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-3/shape = SubResource( 8 )
+3/shape = SubResource( 9 )
 3/shape_one_way = false
 3/shape_one_way_margin = 1.0
 3/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 8 ),
+"shape": SubResource( 9 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 3/z_index = 0
@@ -199,14 +200,14 @@ points = PoolVector2Array( 128, 128, 0, 128, 0, 0, 128, 0 )
 7/navigation_offset = Vector2( 0, 0 )
 7/shape_offset = Vector2( 0, 0 )
 7/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-7/shape = SubResource( 9 )
+7/shape = SubResource( 10 )
 7/shape_one_way = false
 7/shape_one_way_margin = 1.0
 7/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 9 ),
+"shape": SubResource( 10 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 7/z_index = 0
@@ -367,50 +368,17 @@ points = PoolVector2Array( 128, 128, 0, 128, 0, 0, 128, 0 )
 17/navigation_offset = Vector2( 0, 0 )
 17/shape_offset = Vector2( 0, 0 )
 17/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-17/shape = SubResource( 13 )
+17/shape = SubResource( 6 )
 17/shape_one_way = false
 17/shape_one_way_margin = 1.0
 17/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 13 ),
+"shape": SubResource( 6 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 17/z_index = 0
-
-[sub_resource type="Animation" id=11]
-resource_name = "teste"
-length = 2.0
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.5, 1, 1.5, 2 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
-"update": 0,
-"values": [ Vector2( 3195.69, 221.845 ), Vector2( 3500.47, 361.536 ), Vector2( 3951.29, 291.69 ), Vector2( 3621.11, 107.552 ), Vector2( 2929, 113.901 ) ]
-}
-
-[sub_resource type="Animation" id=12]
-resource_name = "New Anim"
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.5, 1 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 0,
-"values": [ Vector2( 1968.99, 775.977 ), Vector2( 2136.8, 775.977 ), Vector2( 1783.2, 781.97 ) ]
-}
 
 [sub_resource type="DynamicFont" id=14]
 size = 60
@@ -420,13 +388,13 @@ font_data = ExtResource( 25 )
 script = ExtResource( 20 )
 
 [node name="TileMap" type="TileMap" parent="."]
-tile_set = SubResource( 10 )
+tile_set = SubResource( 11 )
 cell_size = Vector2( 128, 128 )
 format = 1
 tile_data = PoolIntArray( 131087, 2, 0, 131088, 3, 0, 131089, 4, 0, 262144, 0, 0, 262145, 16, 0, 262146, 16, 0, 262147, 16, 0, 262148, 16, 0, 262149, 16, 0, 262150, 1, 0, 262151, 1, 0, 262152, 1, 0, 262153, 1, 0, 262154, 1, 0, 262155, 15, 0, 262157, 0, 0, 262158, 1, 0, 262159, 1, 0, 262160, 1, 0, 262161, 1, 0, 262162, 1, 0, 262163, 1, 0, 262164, 1, 0, 262165, 1, 0, 262166, 16, 0, 262167, 1, 0, 262168, 1, 0, 262169, 1, 0, 262170, 1, 0, 262171, 1, 0, 262172, 1, 0, 262173, 1, 0, 262174, 1, 0, 262175, 1, 0, 262176, 1, 0, 262177, 1, 0, 262178, 1, 0, 262179, 1, 0, 262180, 1, 0, 262181, 1, 0, 262182, 1, 0, 262183, 1, 0, 262184, 1, 0, 262185, 1, 0, 262186, 1, 0, 262187, 1, 0, 262188, 1, 0, 262189, 1, 0, 262190, 1, 0, 262191, 1, 0, 262192, 1, 0, 262193, 1, 0, 262194, 1, 0, 262195, 1, 0, 262196, 1, 0, 262197, 1, 0, 262198, 1, 0, 262199, 1, 0, 262200, 1, 0, 262201, 1, 0, 262202, 1, 0, 262203, 1, 0, 262204, 1, 0, 262205, 1, 0, 262206, 1, 0, 262207, 1, 0, 262208, 1, 0, 262209, 1, 0, 262210, 1, 0, 262211, 1, 0, 262212, 1, 0, 262213, 1, 0, 262214, 1, 0, 262215, 1, 0, 262216, 1, 0, 262217, 1, 0, 327680, 14, 0, 327681, 13, 0, 327682, 13, 0, 327683, 13, 0, 327684, 13, 0, 327685, 13, 0, 327686, 13, 0, 327687, 13, 0, 327688, 13, 0, 327689, 13, 0, 327690, 13, 0, 327691, 13, 0, 327692, 13, 0, 327693, 13, 0, 327694, 13, 0, 327695, 13, 0, 327696, 13, 0, 327697, 13, 0, 327698, 13, 0, 327699, 13, 0, 327700, 13, 0, 327701, 13, 0, 327702, 13, 0, 327703, 12, 0, 393216, 14, 0, 393217, 13, 0, 393218, 13, 0, 393219, 13, 0, 393220, 13, 0, 393221, 13, 0, 393222, 13, 0, 393223, 13, 0, 393224, 13, 0, 393225, 13, 0, 393226, 13, 0, 393227, 13, 0, 393228, 13, 0, 393229, 13, 0, 393230, 13, 0, 393231, 13, 0, 393232, 13, 0, 393233, 13, 0, 393234, 13, 0, 393235, 13, 0, 393236, 13, 0, 393237, 13, 0, 393238, 13, 0, 393239, 12, 0, 458752, 14, 0, 458753, 0, 0, 458754, 16, 0, 458755, 16, 0, 458756, 16, 0, 458757, 16, 0, 458758, 16, 0, 458759, 16, 0, 458760, 16, 0, 458761, 16, 0, 458762, 16, 0, 458763, 16, 0, 458764, 16, 0, 458765, 16, 0, 458766, 16, 0, 458767, 16, 0, 458768, 16, 0, 458769, 16, 0, 458770, 16, 0, 458771, 16, 0, 458772, 16, 0, 458773, 16, 0, 458774, 16, 0, 458775, 12, 0 )
 
 [node name="Bush (1)" type="Sprite" parent="."]
-position = Vector2( 2610.54, 480.776 )
+position = Vector2( 1964, 467.306 )
 texture = ExtResource( 21 )
 
 [node name="Player" parent="." instance=ExtResource( 22 )]
@@ -435,6 +403,7 @@ position = Vector2( 583.363, 444.102 )
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2( -199.863, -415.305 )
 current = true
+zoom = Vector2( 1.5, 1.5 )
 limit_left = 0
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
@@ -443,36 +412,9 @@ limit_left = 0
 motion_scale = Vector2( 0.1, 1 )
 
 [node name="bg" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2( 280.123, 57.6147 )
+position = Vector2( 503.104, 139.829 )
 scale = Vector2( 1.66431, 1.66448 )
 texture = ExtResource( 1 )
-
-[node name="Plataforma" parent="." instance=ExtResource( 23 )]
-position = Vector2( 3335.42, 285.888 )
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Plataforma"]
-autoplay = "teste"
-playback_speed = -0.5
-anims/teste = SubResource( 11 )
-
-[node name="Plataforma2" parent="." instance=ExtResource( 23 )]
-position = Vector2( 1944.07, 779.244 )
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Plataforma2"]
-autoplay = "New Anim"
-"anims/New Anim" = SubResource( 12 )
-
-[node name="Vermelhinho" parent="." instance=ExtResource( 18 )]
-position = Vector2( 943.505, 479.628 )
-
-[node name="Vermelhinho2" parent="." instance=ExtResource( 18 )]
-position = Vector2( 1034.27, 479.628 )
-
-[node name="Vermelhinho3" parent="." instance=ExtResource( 18 )]
-position = Vector2( 1122.37, 479.628 )
-
-[node name="Amarelinho" parent="." instance=ExtResource( 19 )]
-position = Vector2( 2089.89, 205.11 )
 
 [node name="HUD" type="CanvasLayer" parent="."]
 
@@ -498,3 +440,34 @@ __meta__ = {
 [node name="Mushroom_1" type="Sprite" parent="HUD/pontos"]
 position = Vector2( -60.4557, 30.6323 )
 texture = ExtResource( 24 )
+
+[node name="Inimigos" type="Node" parent="."]
+
+[node name="Amarelinho" parent="Inimigos" instance=ExtResource( 19 )]
+position = Vector2( 4164.2, 398.173 )
+
+[node name="Zumbi-Female" parent="Inimigos" instance=ExtResource( 23 )]
+position = Vector2( 927.042, 819.099 )
+
+[node name="Zumbi-Male" parent="Inimigos" instance=ExtResource( 26 )]
+position = Vector2( 2455.38, 437.403 )
+
+[node name="Zumbi-Male2" parent="Inimigos" instance=ExtResource( 26 )]
+position = Vector2( 2387.34, 828.558 )
+
+[node name="Zumbi-Female2" parent="Inimigos" instance=ExtResource( 23 )]
+position = Vector2( 5346.37, 425.424 )
+
+[node name="Zumbi-Female3" parent="Inimigos" instance=ExtResource( 23 )]
+position = Vector2( 4070.1, 431.773 )
+
+[node name="Coletáveis" type="Node" parent="."]
+
+[node name="Vermelhinho" parent="Coletáveis" instance=ExtResource( 18 )]
+position = Vector2( 943.505, 479.628 )
+
+[node name="Vermelhinho2" parent="Coletáveis" instance=ExtResource( 18 )]
+position = Vector2( 1034.27, 479.628 )
+
+[node name="Vermelhinho3" parent="Coletáveis" instance=ExtResource( 18 )]
+position = Vector2( 1122.37, 479.628 )
