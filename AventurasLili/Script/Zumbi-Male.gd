@@ -67,3 +67,8 @@ func _on_Morte_body_entered(body):
 func _on_AnimatedSprite_animation_finished():
 	if isDead:
 		$".".queue_free()
+
+func _on_Dano_body_entered(body):
+	if(!isDead):
+		if (body.name) == "Player":
+			body.less_life()

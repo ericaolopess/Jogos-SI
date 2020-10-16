@@ -39,14 +39,14 @@ animations = [ {
 "name": "Attack",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 17 ), ExtResource( 19 ), ExtResource( 18 ), ExtResource( 9 ), ExtResource( 8 ), ExtResource( 1 ), ExtResource( 6 ), ExtResource( 10 ), ExtResource( 3 ), ExtResource( 2 ), ExtResource( 5 ), ExtResource( 26 ) ],
-"loop": false,
-"name": "Dead",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 23 ), ExtResource( 21 ), ExtResource( 27 ), ExtResource( 24 ), ExtResource( 30 ), ExtResource( 25 ), ExtResource( 29 ), ExtResource( 20 ), ExtResource( 28 ), ExtResource( 22 ) ],
 "loop": true,
 "name": "Walk",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 17 ), ExtResource( 19 ), ExtResource( 18 ), ExtResource( 9 ), ExtResource( 8 ), ExtResource( 1 ), ExtResource( 6 ), ExtResource( 10 ), ExtResource( 3 ), ExtResource( 2 ), ExtResource( 5 ), ExtResource( 26 ) ],
+"loop": false,
+"name": "Dead",
 "speed": 5.0
 } ]
 
@@ -64,14 +64,15 @@ extents = Vector2( 125.979, 35.769 )
 
 [sub_resource type="CapsuleShape2D" id=6]
 
-[node name="Zumbi-Female" type="StaticBody2D"]
+[node name="Zumbi-Female" type="StaticBody2D" groups=[
+"inimigo",
+]]
 scale = Vector2( 0.3, 0.3 )
 script = ExtResource( 46 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
 animation = "Walk"
-frame = 9
 playing = true
 
 [node name="Dano" type="Area2D" parent="."]
@@ -101,6 +102,7 @@ shape = SubResource( 5 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 6 )
 [connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]
+[connection signal="body_entered" from="Dano" to="." method="_on_Dano_body_entered"]
 [connection signal="body_entered" from="AtacarE" to="." method="_on_AtacarE_body_entered"]
 [connection signal="body_exited" from="AtacarE" to="." method="_on_AtacarE_body_exited"]
 [connection signal="body_entered" from="AtacarD" to="." method="_on_AtacarD_body_entered"]

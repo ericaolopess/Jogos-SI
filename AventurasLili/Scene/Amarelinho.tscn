@@ -6,7 +6,9 @@
 [sub_resource type="CircleShape2D" id=1]
 radius = 22.4207
 
-[node name="Amarelinho" type="Area2D"]
+[node name="Amarelinho" type="Area2D" groups=[
+"inimigo",
+]]
 script = ExtResource( 1 )
 
 [node name="Mushroom_2" type="Sprite" parent="."]
